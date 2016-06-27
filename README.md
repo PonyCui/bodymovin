@@ -47,7 +47,7 @@ to make sure it was copied correctly type)<br/>
 WINDOWS:<br/>
 open the registry key HKEY_CURRENT_USER/Software/Adobe/CSXS.6 and add a key named PlayerDebugMode, of type String, and value 1.<br/>
 MAC:<br/>
-open the file ~/Library/Preferences/com.adobe.CSXS.6.plist and add a row with key PlayerDebugMode, of type String, and value 1.<br/>
+open Terminal, type ```defaults write com.adobe.CSXS.6 PlayerDebugMode 1```<br/>
 
 ### Option 2:
 

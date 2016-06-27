@@ -37,7 +37,7 @@ var bm_sourceHelper = (function () {
             width: item.source.width,
             height: item.source.height,
             name: item.name,
-            id: 'image_' + imageCount
+            id: item.name
         });
         imageCount += 1;
         return arr[arr.length - 1].id;
@@ -68,11 +68,11 @@ var bm_sourceHelper = (function () {
             id: currentSourceData.id,
             w: currentSourceData.width,
             h: currentSourceData.height,
-            p: 'images/img_' + currentExportingImage + '.png'
+            p: 'images/' + currentSourceData.name
         });
         var helperComp = app.project.items.addComp('tempConverterComp', Math.max(4, currentSource.width), Math.max(4, currentSource.height), 1, 1, 1);
         helperComp.layers.add(currentSource);
-        var file = new File(folder.absoluteURI + '/img_' + currentExportingImage + '.png');
+        var file = new File(folder.absoluteURI + '/' + currentSourceData.name);
         helperComp.saveFrameToPng(0, file);
         helperComp.remove();
         currentExportingImage += 1;
